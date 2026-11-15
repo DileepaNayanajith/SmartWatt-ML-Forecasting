@@ -1,0 +1,24 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode/
+.idea/
+# Local datasets and generated model files
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/models/*
+!/models/.gitkeep
+*.joblib
+*.pkl
+# Keep results deliberate: add measured reports and modest plots explicitly.

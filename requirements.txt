@@ -1,0 +1,9 @@
+# Initial dependencies; record tested versions once the pipeline is implemented.
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+joblib
+jupyterlab
+streamlit
