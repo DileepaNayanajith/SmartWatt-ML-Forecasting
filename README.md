@@ -8,9 +8,10 @@ Group 19 — EnergyScope
 
 ## Status
 
-This repository is a starting structure for the group project. Preprocessing,
-training, evaluation and the dashboard are not implemented here yet. There are
-no trained models or measured results in this repository.
+On `part-3-evaluation`, the evaluation module, experiment helpers and simulated
+software tests are implemented. See [Part 3 setup and handoff](docs/part3.md).
+Preprocessing, model training and the dashboard are still placeholders. There
+are no real trained models or measured forecasting results in this repository.
 
 The project handover says initial exploration has started in Jupyter, including
 data inspection and a correlation heatmap. Those notebooks were not available
