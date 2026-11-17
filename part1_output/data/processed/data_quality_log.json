@@ -1,0 +1,132 @@
+{
+  "raw_audit": {
+    "file": "energydata_complete.csv",
+    "sha256": "2820bf712ad0275cb18b85a05250926100d8e65ebb9f4d2d016ca91ea152a25d",
+    "rows": 19735,
+    "columns": 29,
+    "first_timestamp": "2016-01-11 17:00:00",
+    "last_timestamp": "2016-05-27 18:00:00",
+    "step_counts": {
+      "0 days 00:10:00": 19734
+    },
+    "duplicate_timestamps": 0,
+    "missing_values": 0,
+    "on_10_minute_grid": true,
+    "continuous_clock": true,
+    "appliances_wh": {
+      "min": 10.0,
+      "max": 1080.0,
+      "mean": 97.695,
+      "negative_values": 0,
+      "not_multiple_of_10": 0
+    },
+    "lights_wh": {
+      "min": 0.0,
+      "max": 70.0,
+      "share_zero": 0.7728
+    },
+    "humidity_out_of_0_100": {
+      "RH_1": 0,
+      "RH_2": 0,
+      "RH_3": 0,
+      "RH_4": 0,
+      "RH_5": 0,
+      "RH_6": 0,
+      "RH_7": 0,
+      "RH_8": 0,
+      "RH_9": 0,
+      "RH_out": 0
+    },
+    "temperature_range_c": {
+      "T1": [
+        16.79,
+        26.26
+      ],
+      "T2": [
+        16.1,
+        29.86
+      ],
+      "T3": [
+        17.2,
+        29.24
+      ],
+      "T4": [
+        15.1,
+        26.2
+      ],
+      "T5": [
+        15.33,
+        25.8
+      ],
+      "T6": [
+        -6.07,
+        28.29
+      ],
+      "T7": [
+        15.39,
+        26.0
+      ],
+      "T8": [
+        16.31,
+        27.23
+      ],
+      "T9": [
+        14.89,
+        24.5
+      ],
+      "T_out": [
+        -5.0,
+        26.1
+      ]
+    },
+    "constant_columns": [],
+    "corr_random_vs_appliances": {
+      "rv1": -0.0111,
+      "rv2": -0.0111
+    },
+    "warnings": [],
+    "timestamp_note": "The file does not say whether a timestamp marks the START or the END of its 10-minute interval, or which time zone it uses. The pipeline is safe either way because every feature for target hour H uses only hours that finished before H (see features.py and tests/test_leakage.py)."
+  },
+  "hourly_conversion": {
+    "rule": "hourly energy = sum of 6 ten-minute Wh readings / 1000; temperature and humidity = mean; an hour with fewer than 6 readings is set to NaN and never imputed",
+    "hours_in_range": 3290,
+    "hours_complete": 3289,
+    "incomplete_hours": {
+      "2016-05-27 18:00:00": 1
+    },
+    "hours_with_no_readings": [],
+    "high_values_removed": 0,
+    "values_imputed": 0
+  },
+  "clock_shift_evidence": {
+    "control_before_dst": {
+      "-1": 0.784,
+      "0": 0.94,
+      "1": 0.825
+    },
+    "control_after_dst": {
+      "-1": 0.798,
+      "0": 0.969,
+      "1": 0.834
+    },
+    "across_dst": {
+      "-1": 0.568,
+      "0": 0.823,
+      "1": 0.982
+    },
+    "reading": "If the across_dst pair is best at shift 1 while both controls are best at 0, daily routines move one hour earlier on the file clock after the DST date: the file clock is fixed winter time."
+  },
+  "ml_ready_rows": 3121,
+  "warmup_hours_lost": 168,
+  "first_target_hour": "2016-01-18 17:00:00",
+  "last_target_hour": "2016-05-27 17:00:00",
+  "primary_feature_count": 40,
+  "decisions": [
+    "Hourly energy = sum of six 10-minute Wh readings / 1000 (kWh); no imputation of incomplete hours.",
+    "Temperature/humidity = hourly mean. Peaks and high values are kept.",
+    "rv1/rv2 and airport weather are excluded from the primary feature set.",
+    "Calendar features use local wall-clock time (file clock + 1 h from 2016-03-27 02:00) because routines shift 1 h at the DST date.",
+    "Features use only hours finished before the target hour (shift >= 1 on a regular hourly index).",
+    "First 168 hours are lost because lag-168 needs a full week of history."
+  ]
+}
