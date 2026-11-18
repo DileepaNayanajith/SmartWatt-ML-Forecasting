@@ -1,0 +1,62 @@
+{
+  "A": [
+    "y_lag_1h",
+    "y_lag_2h",
+    "y_lag_3h",
+    "y_lag_6h",
+    "y_lag_12h",
+    "y_lag_24h",
+    "y_lag_168h",
+    "y_roll_mean_3h",
+    "y_roll_std_3h",
+    "y_roll_mean_6h",
+    "y_roll_std_6h",
+    "y_roll_mean_24h",
+    "y_roll_std_24h",
+    "y_change_1h"
+  ],
+  "B": [
+    "hour_sin",
+    "hour_cos",
+    "is_weekend"
+  ],
+  "C": [
+    "T1_lag_1h",
+    "T2_lag_1h",
+    "T3_lag_1h",
+    "T4_lag_1h",
+    "T5_lag_1h",
+    "T6_lag_1h",
+    "T7_lag_1h",
+    "T8_lag_1h",
+    "T9_lag_1h",
+    "RH_1_lag_1h",
+    "RH_2_lag_1h",
+    "RH_3_lag_1h",
+    "RH_4_lag_1h",
+    "RH_5_lag_1h",
+    "RH_6_lag_1h",
+    "RH_7_lag_1h",
+    "RH_8_lag_1h",
+    "RH_9_lag_1h",
+    "indoor_T_change_1h",
+    "indoor_RH_change_1h",
+    "T6_change_1h"
+  ],
+  "D": [
+    "lights_lag_1h_wh",
+    "lights_change_1h_wh"
+  ],
+  "E": [
+    "T_out_lag_2h",
+    "Press_mm_hg_lag_2h",
+    "RH_out_lag_2h",
+    "Windspeed_lag_2h",
+    "Visibility_lag_2h",
+    "Tdewpoint_lag_2h"
+  ],
+  "RV": [
+    "rv1_lag_1h",
+    "rv2_lag_1h"
+  ]
+}
